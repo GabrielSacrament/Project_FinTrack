@@ -10,6 +10,7 @@
 #   POST /usuarios/          → Criar conta (público)
 #   POST /usuarios/login     → Login (público)
 #   GET  /usuarios/me        → Perfil (autenticado)
+#   GET  /usuarios/          → Listar todos (autenticado)
 #   PUT  /usuarios/me        → Atualizar perfil (autenticado)
 # ============================================================
 
@@ -149,3 +150,23 @@ def atualizar_perfil(
     """
     servico = criar_servico_usuario(db)
     return servico.atualizar_perfil(usuario_atual.id, dados)
+
+
+# ============================================================
+# GET /usuarios/
+# Listar todos os usuários (autenticado)
+# ============================================================
+@router.get(
+    "/",
+    response_model=list[RespostaUsuarioSchema],
+    summary="Listar usuários",
+)
+def listar_usuarios(
+    db: Session = Depends(obter_sessao),
+    usuario_atual: Usuario = Depends(obter_usuario_atual),
+):
+    """
+    Lista todos os usuários cadastrados.
+    """
+    servico = criar_servico_usuario(db)
+    return servico.listar_usuarios()

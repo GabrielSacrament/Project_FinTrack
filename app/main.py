@@ -37,7 +37,7 @@ from app.routers import despesa_router
 # Os parâmetros title, description e version são usados
 # para gerar a documentação automática (Swagger UI).
 app = FastAPI(
-    title="FinTrack",
+    title="FinTrack Project",
     description="API de Controle Financeiro Pessoal",
     version="0.1.0",
 )

@@ -225,3 +225,6 @@ class ServicoUsuario:
             usuario.senha_hash = gerar_hash_senha(dados.senha)
 
         return self.repositorio.atualizar(usuario)
+
+    def listar_usuarios(self) -> list[Usuario]:
+        return self.repositorio.buscar_todos()

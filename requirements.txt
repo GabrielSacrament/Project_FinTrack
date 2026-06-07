@@ -5,7 +5,9 @@ pydantic==2.13.4
 pydantic_settings==2.14.1
 python-jose==3.5.0
 passlib==1.7.4
-bcrypt==5.0.0
+bcrypt==4.0.1
 python-multipart==0.0.32
 email-validator==2.3.0
 python-dotenv==1.2.2
+flet==0.85.2
+requests==2.34.2
