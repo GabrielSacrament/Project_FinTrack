@@ -1,0 +1,55 @@
+# ============================================================
+# .gitignore — Arquivos ignorados pelo Git
+# ============================================================
+
+# --- Ambiente Virtual Python ---
+# .venv contém as dependências instaladas via pip.
+# Cada desenvolvedor precisa rodar "pip install -r requirements.txt"
+# para recriar o ambiente localmente.
+.venv/
+
+# --- Bytecode Compilado ---
+# Python gera arquivos .pyc e pastas __pycache__ ao executar
+# o código. São desnecessários no repositório (gerados autom.).
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Banco de Dados SQLite ---
+# O arquivo .db é específico de cada ambiente (dev/prod).
+# Cada um deve criar o próprio banco local.
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Variáveis de Ambiente / Secrets ---
+# .env contém chaves de API, senhas e tokens.
+# NUNCA versionar secrets — risco de segurança crítico.
+.env
+*.env
+
+# --- IDE / Editor ---
+# Configurações pessoais de editores (VS Code, PyCharm, etc).
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# --- Testes e Cobertura ---
+# Relatórios gerados durante execução de testes.
+.coverage
+htmlcov/
+.pytest_cache/
+
+# --- Distribuição ---
+# Arquivos gerados em build/pacote.
+*.egg-info/
+dist/
+build/
+
+# --- Logs ---
+# Arquivos de log não devem ser versionados.
+*.log
